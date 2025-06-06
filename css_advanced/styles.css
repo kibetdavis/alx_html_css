@@ -1,4 +1,435 @@
-/* styles.css */
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f8f8f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f9f9f9;
+}
+
+/* Purple accent */
+:root {
+  --purple: #6a0dad;
+  --purple-light: #9b59b6;
+  --overlay-dark: rgba(0, 0, 0, 0.4);
+}
+
+/* Links */
+a {
+  color: var(--purple);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--purple-light);
+}
+
+/* Header */
+header {
+  position: relative;
+  color: white;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  z-index: 0;
+}
+
+header nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: transparent;
+}
+
+header nav img {
+  height: 50px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+header nav ul li a {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+header section {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+header p span {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--purple-light);
+}
+
+header button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  background-color: var(--purple);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header button:hover {
+  background-color: var(--purple-light);
+}
+
+/* Main */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Learn from the pros section */
+main > section:nth-of-type(1) {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+main > section:nth-of-type(1) > div:first-child h2 {
+  font-size: 2.5rem;
+  color: var(--purple);
+  margin-bottom: 1.5rem;
+}
+
+main > section:nth-of-type(1) > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+main > section:nth-of-type(1) > div:last-child > div {
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+main > section:nth-of-type(1) > div:last-child > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.4);
+}
+
+main > section:nth-of-type(1) > div:last-child img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid var(--purple);
+}
+
+main > section:nth-of-type(1) > div:last-child h3 {
+  color: var(--purple);
+  margin-bottom: 0.3rem;
+}
+
+main > section:nth-of-type(1) > div:last-child p {
+  font-style: italic;
+  color: #666;
+}
+
+/* Testimonial section */
+main > section:nth-of-type(2) {
+  position: relative;
+  margin-bottom: 3rem;
+  color: white;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+main > section:nth-of-type(2) img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(0.5);
+  border-radius: 20px;
+}
+
+main > section:nth-of-type(2) > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+main > section:nth-of-type(2) blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+main > section:nth-of-type(2) p {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Most popular tutorials */
+main > section:nth-of-type(3) {
+  margin-bottom: 3rem;
+}
+
+main > section:nth-of-type(3) h2 {
+  color: var(--purple);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+main > section:nth-of-type(3) > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+main > section:nth-of-type(3) > div > div {
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+main > section:nth-of-type(3) > div > div:hover {
+  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
+}
+
+main > section:nth-of-type(3) img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+main > section:nth-of-type(3) h3 {
+  color: var(--purple);
+}
+
+main > section:nth-of-type(3) > div > div > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+main > section:nth-of-type(3) > div > div > div:first-child img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--purple);
+}
+
+main > section:nth-of-type(3) > div > div > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--purple);
+}
+
+main > section:nth-of-type(3) i.fa-star,
+main > section:nth-of-type(3) i.fa-star-half {
+  color: var(--purple);
+}
+
+/* Free membership */
+main > section:nth-of-type(4) {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+main > section:nth-of-type(4) h2 {
+  color: var(--purple);
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+main > section:nth-of-type(4) > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+main > section:nth-of-type(4) > div > div {
+  background: white;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+main > section:nth-of-type(4) img {
+  width: 50px;
+  margin-bottom: 0.5rem;
+}
+
+main > section:nth-of-type(4) h3 {
+  color: var(--purple);
+  margin-bottom: 0.3rem;
+}
+
+main > section:nth-of-type(4) button {
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+main > section:nth-of-type(4) button:hover {
+  background-color: var(--purple-light);
+}
+
+/* FAQ */
+main > section:nth-of-type(5) {
+  margin-bottom: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main > section:nth-of-type(5) h2 {
+  color: var(--purple);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+main > section:nth-of-type(5) > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+main > section:nth-of-type(5) > div > div {
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+main > section:nth-of-type(5) h3 {
+  color: var(--purple);
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+footer section {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer img {
+  height: 40px;
+}
+
+footer div a {
+  color: #bbb;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+footer div a:hover {
+  color: var(--purple-light);
+}
+
+footer p {
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  main > section:nth-of-type(1) > div:last-child {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main > section:nth-of-type(3) > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main > section:nth-of-type(4) > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer section {
+    flex-direction: column;
+  }
 }
